@@ -1,5 +1,5 @@
 
-
+## [System.Text.Json](https://learn.microsoft.com/zh-cn/dotnet/api/system.text.json?view=net-10.0)
 ## 日期格式 (Date Formatting)
 
 默认情况下，System.Text.Json 会使用 ISO 8601 格式（如 "2025-10-31T16:46:00Z"）来序列化 DateTime 类型。但很多时候我们希望使用更易读或符合特定规范的格式。

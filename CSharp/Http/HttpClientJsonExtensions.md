@@ -1,0 +1,1 @@
+## [HttpClientJsonExtensions.PostAsJsonAsync 方法](https://learn.microsoft.com/zh-cn/dotnet/api/system.net.http.json.httpclientjsonextensions.postasjsonasync?view=net-9.0)
