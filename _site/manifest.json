@@ -71,6 +71,16 @@
       "version": ""
     },
     {
+      "type": "Conceptual",
+      "source_relative_path": "ASP-NET-Core/configuration.md",
+      "output": {
+        ".html": {
+          "relative_path": "ASP-NET-Core/configuration.html"
+        }
+      },
+      "version": ""
+    },
+    {
       "type": "Toc",
       "source_relative_path": "ASP-NET-Core/toc.yml",
       "output": {
@@ -295,6 +305,16 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "CSharp/Linq.md",
+      "output": {
+        ".html": {
+          "relative_path": "CSharp/Linq.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "CSharp/Null.md",
       "output": {
         ".html": {
@@ -482,6 +502,16 @@
       "output": {
         ".html": {
           "relative_path": "CSharp/字符串/Jobject.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "CSharp/字符串/Json在线工具.md",
+      "output": {
+        ".html": {
+          "relative_path": "CSharp/字符串/Json在线工具.html"
         }
       },
       "version": ""
@@ -828,6 +858,16 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "docs/EF-Core/高效的查询.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/EF-Core/高效的查询.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "docs/GitBash常用命令.md",
       "output": {
         ".html": {
@@ -1151,6 +1191,16 @@
       "output": {
         ".html": {
           "relative_path": "软件架构和设计/设计模式/建造者.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "软件架构和设计/设计模式/概述.md",
+      "output": {
+        ".html": {
+          "relative_path": "软件架构和设计/设计模式/概述.html"
         }
       },
       "version": ""

@@ -228,3 +228,83 @@ return TimeSpan.Parse(reader.Value.ToString());
 混合使用也是可行的（例如在 ASP.NET Core 中全局用 System.Text.Json，局部用 Newtonsoft.Json 处理复杂类型）。
 
 如果你有具体的类型或格式需求（如 Guid 转小写、decimal 格式化等），我可以提供对应的 Newtonsoft.Json 自定义转换器示例。
+
+在 Newtonsoft.Json 里把“大驼峰”属性名（`PascalCase`）序列化成“小驼峰”字段（`camelCase`）只需要两步：
+
+1. 安装包（已装可跳过）  
+   ```bash
+   Install-Package Newtonsoft.Json
+   ```
+
+2. 在序列化时挂一个 `CamelCasePropertyNamesContractResolver` 即可：  
+   ```csharp
+   using Newtonsoft.Json;
+   using Newtonsoft.Json.Serialization;
+
+   var obj = new Person { FirstName = "Tom", LastName = "Jerry" };
+
+   var json = JsonConvert.SerializeObject(
+               obj,
+               Formatting.Indented,
+               new JsonSerializerSettings
+               {
+                   ContractResolver = new CamelCasePropertyNamesContractResolver()
+               });
+
+   Console.WriteLine(json);
+   // 输出：
+   // {
+   //   "firstName": "Tom",
+   //   "lastName": "Jerry"
+   // }
+   ```
+
+如果你希望 **全局默认** 就是 camelCase，也可以把 `CamelCasePropertyNamesContractResolver` 做成一个静态 `JsonSerializerSettings` 对象，到处复用；或者干脆封装一个扩展方法：
+
+```csharp
+public static string ToCamelCaseJson(this object o) =>
+    JsonConvert.SerializeObject(o, new JsonSerializerSettings
+    {
+        ContractResolver = new CamelCasePropertyNamesContractResolver()
+    });
+```
+
+反向反序列化时同样用同一个 `ContractResolver`，Newtonsoft 会自动把 camelCase JSON 字段匹配回 PascalCase 属性，无需额外配置。
+
+在 Newtonsoft.Json 里，**反序列化时忽略大小写**（name ↔ Name，userId ↔ UserId 等）只需要给 `JsonSerializerSettings` 加一行开关：
+
+```csharp
+JsonSerializerSettings settings = new JsonSerializerSettings
+{
+    ContractResolver = new DefaultContractResolver
+    {
+        // 关键：开启“不区分大小写”
+        NamingStrategy = new CamelCaseNamingStrategy()
+        {
+            ProcessDictionaryKeys = true,
+            OverrideSpecifiedNames = true
+        },
+        // 或者干脆用下面这句，更通用：
+        // NamingStrategy = new DefaultNamingStrategy { ProcessDictionaryKeys = true }
+    },
+    // 让属性名匹配时忽略大小写
+    ContractResolver = new DefaultContractResolver
+    {
+        // 关键：开启“不区分大小写”
+        PropertyNameCaseInsensitive = true
+    }
+};
+
+var json = @"{""name"":""Tom"",""userId"":123}";
+var obj = JsonConvert.DeserializeObject<User>(json, settings);
+
+class User
+{
+    public string Name { get; set; }
+    public int UserId { get; set; }
+}
+```
+
+一句话记忆：  
+**`new DefaultContractResolver { PropertyNameCaseInsensitive = true }`**  
+就能让 **任何大小写形式的 JSON 字段** 自动映射到 **PascalCase 属性**（或反之）。
