@@ -1,5 +1,5 @@
 {
-  "source_base_path": "E:/Git/DocFX/zqc1105.github.io",
+  "source_base_path": "D:/快捷键/重要项目/Git/zqc1105.github.io-1",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -145,6 +145,16 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "ASP-NET-Core/概述.md",
+      "output": {
+        ".html": {
+          "relative_path": "ASP-NET-Core/概述.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "ASP-NET-Core/模型绑定/FromBody.md",
       "output": {
         ".html": {
@@ -259,6 +269,16 @@
       "output": {
         ".html": {
           "relative_path": "CSharp/Debug/反编译可执行性文件.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "CSharp/Debug/概述.md",
+      "output": {
+        ".html": {
+          "relative_path": "CSharp/Debug/概述.html"
         }
       },
       "version": ""
@@ -578,6 +598,16 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "CSharp/并行编程.md",
+      "output": {
+        ".html": {
+          "relative_path": "CSharp/并行编程.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "CSharp/异步/CancellationToken.md",
       "output": {
         ".html": {
@@ -622,6 +652,49 @@
       "output": {
         ".html": {
           "relative_path": "CSharp/模式匹配/1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "CSharp/类型/元组.md",
+      "output": {
+        ".html": {
+          "relative_path": "CSharp/类型/元组.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "CSharp/类型/元组和匿名类型.md",
+      "output": {
+        ".html": {
+          "relative_path": "CSharp/类型/元组和匿名类型.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "Vue3/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "Vue3/toc.html"
+        },
+        ".json": {
+          "relative_path": "Vue3/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Vue3/概述.md",
+      "output": {
+        ".html": {
+          "relative_path": "Vue3/概述.html"
         }
       },
       "version": ""
