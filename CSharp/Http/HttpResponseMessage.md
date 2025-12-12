@@ -16,6 +16,7 @@
 | `Forbidden` | 403 | 登录了但无权限 |
 | `NotFound` | 404 | 资源不存在 |
 | `Conflict` | 409 | 冲突（如重复键） |
+| `Conflict` | 410 | 指示请求的资源不再可用 |
 | `InternalServerError` | 500 | 服务器内部错误 |
 | `BadGateway` | 502 | 网关/代理错误 |
 | `ServiceUnavailable` | 503 | 服务器暂不可用 |
