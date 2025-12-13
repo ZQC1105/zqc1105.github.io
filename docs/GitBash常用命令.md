@@ -20,3 +20,16 @@ docfx docfx.json --serve
 dotnet new gitignore
 ## Npgsql Database-First
 dotnet ef dbcontext scaffold "Host=localhost;Port=5432;Database=MyTodoDatabase;Username=postgres;Password=123456" Npgsql.EntityFrameworkCore.PostgreSQL --output-dir Models --force
+
+## 修改 Git 远程仓库地址为 SSH
+$ git remote -v
+origin  https://github.com/ZQC1105/Web.git (fetch)
+origin  https://github.com/ZQC1105/Web.git (push) 
+
+CZQ1105@DESKTOP-0JUFRUE MINGW64 /d/Web (main)
+$ git remote set-url origin git@github.com:ZQC1105/Web.git
+
+CZQ1105@DESKTOP-0JUFRUE MINGW64 /d/Web (main)
+$ git remote -v
+origin  git@github.com:ZQC1105/Web.git (fetch)
+origin  git@github.com:ZQC1105/Web.git (push) 
