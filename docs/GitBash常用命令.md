@@ -16,3 +16,7 @@ $ powershell -command "Stop-Process -Id 17808 -Force"
 openssl rand -base64 32
 ## 编译docfx
 docfx docfx.json --serve
+## 创建.gitignore 
+dotnet new gitignore
+## Npgsql Database-First
+dotnet ef dbcontext scaffold "Host=localhost;Port=5432;Database=MyTodoDatabase;Username=postgres;Password=123456" Npgsql.EntityFrameworkCore.PostgreSQL --output-dir Models --force
