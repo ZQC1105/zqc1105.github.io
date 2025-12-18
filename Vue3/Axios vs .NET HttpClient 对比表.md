@@ -14,7 +14,7 @@
 | **默认头**     | `defaults.headers`                | `DefaultRequestHeaders`         | ⭐⭐⭐⭐⭐  |
 | **超时**       | `timeout` 配置                    | `Timeout` 属性                  | ⭐⭐⭐⭐⭐  |
 | **异步模型**   | Promise (async/await)             | Task (async/await)              | ⭐⭐⭐⭐⭐  |
-| **数据序列化** | 自动 JSON 转换                    | 需手动 `JsonSerializer`         | ⭐⭐     |
+| **数据序列化** | 自动 JSON 转换                    | 需手动 `JsonSerializer` (System.Net.Http.Json（.NET 5+内置）)        | ⭐⭐     |
 | **拦截器**     | `interceptors`                    | `HttpMessageHandler` 管道       | ⭐⭐⭐⭐   |
 | **取消请求**   | `AbortController`                 | `CancellationToken`             | ⭐⭐⭐⭐   |
 | **依赖注入**   | 可手动集成                        | 内置支持 (`IHttpClientFactory`) | ⭐⭐     |
